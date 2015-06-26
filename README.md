@@ -1,0 +1,1 @@
+# guadec-presentation-templates
