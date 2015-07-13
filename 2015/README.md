@@ -9,6 +9,9 @@ git clone https://github.com/sils1297/guadec-presentation-templates.git
 cd guadec-presentation-templates/2015
 ```
 
+Don't worry - you **don't need to write LaTeX**! Pandoc is easy! Please give it a
+try so we all can have consistent presentations.
+
 ## How Can I Create a Presentation?
 
 You can create a presentation using Pandoc or LaTeX. Pandoc is way easier and
