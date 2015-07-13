@@ -1,10 +1,13 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\title[How GUADEC is awesome]{How GUADEC is awesome for GNOME contributors}
-\author{John Doe\\\texttt{jdoe@gnome.org}}
+\usepackage{listings}
+\title[How to use \LaTeX for GUADEC 2015]{How to use \LaTeX for creating awesome slides for GUADEC 2015}
+\author{Adrien Plazas \texttt{kekun.plazas@laposte.net}}
 
 \usetheme{guadec}
+
+\AtBeginSection{\frame{\sectionpage}}
 
 \begin{document}
 
@@ -12,42 +15,47 @@
 \titlepage
 \end{frame}
 
-\begin{frame}
-    \begin{block}{Block title}
-     Block content
+\section{Title Slide}
+
+\begin{frame}[containsverbatim]
+\frametitle{Content slide}
+\framesubtitle{With a subtitle}
+
+    Do math simply!
+
+    \begin{center}
+        $\sqrt{5} \neq 1$
+    \end{center}
+
+    \texttt{Use} the $^{power}$ of \LaTeX!
+
+    \begin{block}{With Lower Level Headers}
+        \begin{lstlisting}[language=Python]
+def some_code(is_easy_to):
+    integrate()
+
+# With syntax highlighting, of course!
+        \end{lstlisting}
     \end{block}
-
-    \begin{alertblock}{Alertblock title}
-       Alertblock content
-    \end{alertblock}
-
-    \begin{exampleblock}{Exampleblock title}
-      Exampleblock content
-    \end{exampleblock}
 \end{frame}
 
 \begin{frame}
-\frametitle{Frame title}
-\framesubtitle{Subtitle with \textit{italic text}.}
+\frametitle{Incrementally Showing Lists}
 
-    \begin{theorem}
-        There is no largest prime number.
-    \end{theorem}
-
-    \begin{enumerate}
-        \item<1-| alert@1> Suppose $p$ were the largest prime number.
-        \item<2-> Let $q$ be the product of the first $p$ numbers.
-        \item<3-> Then $q+1$ is not divisible by any of them.
-        \item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
-        number not in the first $p$ numbers.
-    \end{enumerate}
+    \begin{itemize}
+        \item<1-> Is
+        \item<2-| alert@2> Dead
+        \item<3-> Easy!
+        \item<1-> Yet flexible
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{A longer title}
-\begin{itemize}
-\item one
-\item two
-\end{itemize}
+\section{Compiling}
+
+\begin{frame}
+\frametitle{Compiling}
+
+    Simply use \texttt{make tex} in this directory!
 \end{frame}
 
 \end{document}
