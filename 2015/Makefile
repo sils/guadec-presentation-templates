@@ -34,7 +34,7 @@ continuous: pandoc
 	pdflatex $<
 
 clean:
-	rm -Rf $(OUT) $(BYPRODUCTS)
+	rm -Rf $(OUT) $(PANDOC_OUT) $(BYPRODUCTS)
 
 .PHONY: all clean
 
