@@ -2,6 +2,13 @@
 
 This repository contains templates usable for presentations for GUADEC 2015.
 
+The following commands will get you the template:
+
+```
+git clone https://github.com/sils1297/guadec-presentation-templates.git
+cd guadec-presentation-templates/2015
+```
+
 ## How Can I Create a Presentation?
 
 You can create a presentation using Pandoc or LaTeX. Pandoc is way easier and
@@ -13,6 +20,12 @@ you have pandoc installed.
 
 Just look into the md and pdf file to see how you can simply create your
 presentation. It's easy! Please try it out!
+
+> **Note**:
+>
+> You can use `make continuous` to automatically regenerate the PDF whenever you
+> touch the document. For that to work you'll need to have the `inotify-tools`
+> package installed.
 
 ### Using Latex Directly
 
