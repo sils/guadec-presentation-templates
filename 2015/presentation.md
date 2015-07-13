@@ -1,5 +1,6 @@
 % How to use Pandoc for creating awesome slides for GUADEC 2015
 % Lasse Schuirmann (`lasse.schuirmann@gmail.com`)
+% August 7, 2015
 
 # Title Slide
 
