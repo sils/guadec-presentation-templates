@@ -21,8 +21,14 @@ ctex: tex clean
 tex: $(OUT)
 
 pandoc:
-	pandoc $(PANDOC_SRC) -t beamer -s -o $(PANDOC_OUT) --smart \
+	@echo -n "Compiling $(PANDOC_SRC) to $(PANDOC_OUT)... "
+	@pandoc $(PANDOC_SRC) -t beamer -s -o $(PANDOC_OUT) --smart \
 	-V theme:guadec --slide-level 2
+	@echo "Done!"
+
+continuous: pandoc
+	@echo "The PDF will be updated automatically when you save the $(PANDOC_SRC) document. Press Ctrl+C to abort."
+	@while inotifywait -q $(PANDOC_SRC); do sleep 0.1; make --no-print-directory pandoc; done
 
 %.pdf: %.tex
 	pdflatex $<
