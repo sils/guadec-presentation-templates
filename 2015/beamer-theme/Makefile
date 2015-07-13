@@ -1,8 +1,10 @@
 NULL =
 
 SRC = guadec-example.tex
+PANDOC_SRC = pandoc-guadec-example.md
 
 OUT = $(SRC:%.tex=%.pdf)
+PANDOC_OUT = $(PANDOC_SRC:%.md=%.pdf)
 
 BYPRODUCTS = \
 	$(SRC:%.tex=%.aux) \
@@ -14,6 +16,10 @@ BYPRODUCTS = \
 	$(NULL)
 
 all: $(OUT)
+
+pandoc:
+	pandoc $(PANDOC_SRC) -t beamer -s -o $(PANDOC_OUT) --smart \
+	-V theme:guadec --slide-level 2
 
 %.pdf: %.tex
 	pdflatex $<
