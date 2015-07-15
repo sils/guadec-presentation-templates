@@ -11,8 +11,8 @@
         \includegraphics[width=\paperwidth,height=\paperheight]{guadec-background}};
 
       % The footer
-      \node[inner sep=0pt][anchor=south] at (64mm, 6mm) {
-        \includegraphics[width=0.5\paperwidth]{guadec-gothenburg-white}};
+      \node[inner sep=0pt][anchor=south] at (0.5\paperwidth, 6mm) {
+        \includegraphics[height=0.14\paperheight]{guadec-gothenburg-white}};
       \fill[color=white] (0, 0) rectangle (\the\paperwidth, 6mm);
 
       % The footer's content
@@ -39,10 +39,10 @@
 % Title page
 \defbeamertemplate*{title page}{guadec}[1][] {
   \centering
-  \includegraphics[width=0.375\paperwidth]{guadec-logo}
+  \includegraphics[height=0.21\paperheight]{guadec-logo}
   \vskip6mm%
   \hfill
-  \begin{beamercolorbox}[wd=64mm, center, sep=8pt, #1]{title page header}
+  \begin{beamercolorbox}[wd=0.66\paperwidth, center, sep=8pt, #1]{title page header}
     \usebeamerfont{title}\inserttitle\par%
   \end{beamercolorbox}%
   \hfill\hfill
