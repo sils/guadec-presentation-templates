@@ -7,6 +7,10 @@
 Any text under a header 1 won't be shown. This is a title slide without
 content!
 
+---
+
+![Evaluation of a Code Clone Detection](graph.png)
+
 ## Content Slide
 
 Do math simply!
