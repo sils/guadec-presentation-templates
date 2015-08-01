@@ -7,8 +7,8 @@
     % Draw the title page
     \ifnum\thepage=1\relax%
       % The background
-      \node[inner sep=0pt][anchor=south west] at (0, 0) {
-        \includegraphics[width=\paperwidth,height=\paperheight]{guadec-background}};
+      \node[inner sep=0pt][anchor=south] at (0.5\paperwidth, 0) {
+        \includegraphics[width=2\paperheight,height=\paperheight,keepaspectratio]{guadec-background}};
 
       % The footer
       \node[inner sep=0pt][anchor=south] at (0.5\paperwidth, 6mm) {
