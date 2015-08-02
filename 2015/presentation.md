@@ -11,6 +11,13 @@ content!
 
 ![Evaluation of a Code Clone Detection](graph.png)
 
+---
+
+<!-- Leave the alternative text empty and add a backslash *plus a trailing space
+or an extra newline* to get no image caption at all -->
+![](graph.png)\
+
+
 ## Content Slide
 
 Do math simply!
