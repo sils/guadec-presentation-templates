@@ -1,0 +1,71 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\title[Developing Java ATK Wrapper]{Developing Java ATK Wrapper}
+\author{Magdalen Berns \ \texttt{email:m.berns@thismagpie.com}}
+\date{August 7, 2015}
+
+\usetheme{guadec}
+
+\AtBeginSection{\frame{\sectionpage}}
+
+\begin{document}
+
+\begin{frame}[containsverbatim]
+\titlepage
+\end{frame}
+
+\begin{frame}[containsverbatim]
+\frametitle{What is Java ATK Wrapper?}
+ \begin{center}
+Orca screenreader users rely on Orca's voice to navigate the desktop. Orca needs GNOME's ATK to allow it to speak GTK app widgets (and windows) to the user.
+\end{center}
+
+\begin{center}
+When an Orca user is reliant on a Java app, the java-atk-wrapper acts as a bridge between AWT events from Swing widgets (and windows) and ATK.
+\end{center}
+
+\begin{center}
+A company called Sun contributed the Wrapper to GNOME in 2009. It was mainly developed by Ke Wang until 2011; between then and 2014, the wrapper was not actively maintained then Alejandro and I did some work to fix the build and I became maintainer; so, the wrapper was pretty broken (and a little outdated) and still needed a lot of work to make it into a more complete package.
+\end{center}
+\end{frame}
+
+\begin{frame}[containsverbatim]
+\frametitle{How is the java wrapper organised?}
+The wrapper comprises of a Java library and a C library organised into two separate subfolders:
+    \begin{itemize}
+        \item wrapper
+            \begin{itemize}
+        		\item Listens to AWT events.
+		\item Adapts JAAPI to ATK interfaces.
+	    \end{itemize}
+        \item  jni
+       \begin{itemize}
+        	\item Converts AWT events into GSignals.
+	\item Implements ATK class and interface pointers by calling native java functions in C.
+    \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{What needs done to the java-atk-wrapper module in GSoC?}
+      \begin{center}
+      This project is mainly about implementing ATK class and interface pointers which are missing from the wrapper's library but it's also about fixing many bugs.
+      \end{center}
+            \begin{center}
+      Working with ATK, JNI, GLib, GTK, JAAPI and being a module maintainer has its learning curves; implementing the pointer functions with JNI helps me learn the libraries better.
+      \end{center}
+                  \begin{center}
+      A number of crashes and more trivial bugs have now been fixed, the build has been improved and since most of the functions have now been implemented, I have started looking into better reproducable tests and thinking about converting more kinds of AWT events into GSignals with JNI, since some of these are also still missing.
+                  \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Thank You}
+\begin{center}
+  Thanks for listening and please feel free to check out the java-atk-wrapper on git and get involved!
+\end{center}
+\end{frame}
+
+\end{document}
